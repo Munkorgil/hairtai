@@ -11,7 +11,6 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #102E50;
       color: white;
-      overflow: hidden;
     }
     .swiper {
       width: 100vw;
@@ -24,71 +23,122 @@
       justify-content: center;
       text-align: center;
       padding: 2rem;
+      box-sizing: border-box;
+      height: 100%;
     }
     .slide1 { background-color: #F5C45E; color: #102E50; }
     .slide2 { background-color: #E78B48; color: #102E50; }
     .slide3 { background-color: #BE3D2A; }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
     }
-    p {
-      font-size: 1.2rem;
-      max-width: 500px;
+    p, pre {
+      font-size: 1.1rem;
+      max-width: 90%;
+      white-space: pre-wrap;
     }
 
-    .corner-flower {
+    .corner-decor {
       position: absolute;
-      width: 60px;
-      animation: sway 4s ease-in-out infinite;
+      width: 50px;
+      animation: bloom 5s ease-in-out infinite alternate;
+      opacity: 0.8;
     }
     .top-left { top: 10px; left: 10px; }
-    .top-right { top: 10px; right: 10px; }
+    .top-right { top: 10px; right: 10px; transform: scaleX(-1); }
     .bottom-left { bottom: 10px; left: 10px; }
-    .bottom-right { bottom: 10px; right: 10px; }
+    .bottom-right { bottom: 10px; right: 10px; transform: scaleX(-1); }
 
-    @keyframes sway {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(5deg); }
+    @keyframes bloom {
+      0% { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1.1) rotate(3deg); }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: #102E50;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0b1e34;
     }
   </style>
 </head>
 <body>
 
-  <!-- Animated flowers/trees in corners -->
-  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-flower top-left" alt="flower" />
-  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-flower top-right" alt="flower" />
-  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-flower bottom-left" alt="flower" />
-  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-flower bottom-right" alt="flower" />
+  <!-- Animated flowers/leaves in corners -->
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-decor top-left" alt="flower" />
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-decor top-right" alt="flower" />
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-decor bottom-left" alt="flower" />
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-decor bottom-right" alt="flower" />
 
   <!-- Swiper container -->
   <div class="swiper">
     <div class="swiper-wrapper">
+
+      <!-- Page 1 -->
       <div class="swiper-slide slide1">
-        <h1>Ингээд чи минь 19 хүрлээ</h1>
-        <p>Чамдаа зориулсан миний мэндчилгээ</p>
+        <h1>Hi Love 💛</h1>
+        <p>This is a tiny space just for us.</p>
+        <button onclick="playMusic()">🎵 Play our song</button>
+        <p style="font-size: 0.9rem; opacity: 0.8;">Tap to play — volume up!</p>
       </div>
+
+      <!-- Page 2 -->
       <div class="swiper-slide slide2">
-        <h1>🌅 Memory Lane</h1>
-        <p>Every moment with you is a treasure I keep close to my heart.</p>
+        <h1>🌸 Birthday Poem</h1>
+        <pre>
+Ингээд чи минь 19 нас хүрлээ
+
+Хорвоо яасан уужим гэдгийг таньж мэднэ
+Хань болоод хажууд чинь би байна
+
+Амьдралын олон өнгийг үзэж мэднэ
+Амьсгааг чинь чагнаад хажууд чинь би байна
+
+Захгүй замбараагүй цагийн урсгалд
+Залаагаа сэлүүрдээд чамтай цуг давхина
+
+Харах нүдний цөцгий шиг хайрлагдаж өссөн чамайг
+Хайрлаад би дэргэд чинь байя, халамжлаад би хажууд чинь сууя
+
+Хайрт чамдаа төрсөн өдрийн мэнд хүргэе
+        </pre>
       </div>
+
+      <!-- Page 3 -->
       <div class="swiper-slide slide3">
         <h1>Forever Yours ❤️</h1>
         <p>Wherever you go, my love follows. Always.</p>
       </div>
+
     </div>
   </div>
+
+  <!-- Music -->
+  <audio id="bg-music" src="https://www.youtube.com/watch?v=9yjugxgrifQ"></audio>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.swiper', {
       direction: 'horizontal',
       loop: false,
-      spaceBetween: 30,
+      spaceBetween: 0,
       grabCursor: true,
       effect: 'slide',
     });
+
+    function playMusic() {
+      window.open("https://www.youtube.com/watch?v=9yjugxgrifQ", "_blank");
+    }
   </script>
 </body>
 </html>
