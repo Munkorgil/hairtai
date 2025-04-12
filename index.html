@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #102E50;
+      color: white;
+      overflow: hidden;
+    }
+    .swiper {
+      width: 100vw;
+      height: 100vh;
+    }
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .slide1 { background-color: #F5C45E; color: #102E50; }
+    .slide2 { background-color: #E78B48; color: #102E50; }
+    .slide3 { background-color: #BE3D2A; }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 500px;
+    }
+
+    .corner-flower {
+      position: absolute;
+      width: 60px;
+      animation: sway 4s ease-in-out infinite;
+    }
+    .top-left { top: 10px; left: 10px; }
+    .top-right { top: 10px; right: 10px; }
+    .bottom-left { bottom: 10px; left: 10px; }
+    .bottom-right { bottom: 10px; right: 10px; }
+
+    @keyframes sway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated flowers/trees in corners -->
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-flower top-left" alt="flower" />
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-flower top-right" alt="flower" />
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-flower bottom-left" alt="flower" />
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-flower bottom-right" alt="flower" />
+
+  <!-- Swiper container -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide1">
+        <h1>Hi Love 💛</h1>
+        <p>This is a tiny space just for us.</p>
+      </div>
+      <div class="swiper-slide slide2">
+        <h1>🌅 Memory Lane</h1>
+        <p>Every moment with you is a treasure I keep close to my heart.</p>
+      </div>
+      <div class="swiper-slide slide3">
+        <h1>Forever Yours ❤️</h1>
+        <p>Wherever you go, my love follows. Always.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: false,
+      spaceBetween: 30,
+      grabCursor: true,
+      effect: 'slide',
+    });
+  </script>
+</body>
+</html>
