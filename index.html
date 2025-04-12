@@ -11,6 +11,7 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #102E50;
       color: white;
+      overflow-x: hidden;
     }
     .swiper {
       width: 100vw;
@@ -24,11 +25,11 @@
       text-align: center;
       padding: 2rem;
       box-sizing: border-box;
-      height: 100%;
+      height: 100vh;
     }
-    .slide1 { background-color: #F5C45E; color: #102E50; }
-    .slide2 { background-color: #E78B48; color: #102E50; }
-    .slide3 { background-color: #BE3D2A; }
+    .slide1 { background-color: #DCA06D; color: #102E50; }
+    .slide2 { background-color: #DCA06D; color: #102E50; }
+    .slide3 { background-color: #DCA06D; }
 
     h1 {
       font-size: 2.2rem;
@@ -38,22 +39,6 @@
       font-size: 1.1rem;
       max-width: 90%;
       white-space: pre-wrap;
-    }
-
-    .corner-decor {
-      position: absolute;
-      width: 50px;
-      animation: bloom 5s ease-in-out infinite alternate;
-      opacity: 0.8;
-    }
-    .top-left { top: 10px; left: 10px; }
-    .top-right { top: 10px; right: 10px; transform: scaleX(-1); }
-    .bottom-left { bottom: 10px; left: 10px; }
-    .bottom-right { bottom: 10px; right: 10px; transform: scaleX(-1); }
-
-    @keyframes bloom {
-      0% { transform: scale(1) rotate(0deg); }
-      100% { transform: scale(1.1) rotate(3deg); }
     }
 
     button {
@@ -70,15 +55,25 @@
     button:hover {
       background-color: #0b1e34;
     }
+
+    img.memory-pic {
+      max-width: 90%;
+      max-height: 60vh;
+      border-radius: 12px;
+      margin-top: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    img.cute-pic {
+      max-width: 80%;
+      max-height: 40vh;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
 <body>
-
-  <!-- Animated flowers/leaves in corners -->
-  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-decor top-left" alt="flower" />
-  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-decor top-right" alt="flower" />
-  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-decor bottom-left" alt="flower" />
-  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" class="corner-decor bottom-right" alt="flower" />
 
   <!-- Swiper container -->
   <div class="swiper">
@@ -86,16 +81,16 @@
 
       <!-- Page 1 -->
       <div class="swiper-slide slide1">
-        <h1>Hi Love 💛</h1>
-        <p>This is a tiny space just for us.</p>
-        <button onclick="playMusic()">🎵 Play our song</button>
-        <p style="font-size: 0.9rem; opacity: 0.8;">Tap to play — volume up!</p>
+        <img src="IMG_6735.JPG" alt="Cute dog and cat" class="cute-pic" />
+        <h1>Мэнд💛</h1>
+        <p>Эмийн цээнд хүрж буй бүсгүйд</p>
+        <button onclick="playMusic()">🎵 Play</button>
       </div>
 
       <!-- Page 2 -->
-      <div class="swiper-slide slide2">
-        <h1>🌸 Birthday Poem</h1>
+      <div class="swiper-slide slide2">  
         <pre>
+          <p>* * *</p>
 Ингээд чи минь 19 нас хүрлээ
 
 Хорвоо яасан уужим гэдгийг таньж мэднэ
@@ -110,21 +105,17 @@
 Харах нүдний цөцгий шиг хайрлагдаж өссөн чамайг
 Хайрлаад би дэргэд чинь байя, халамжлаад би хажууд чинь сууя
 
-Хайрт чамдаа төрсөн өдрийн мэнд хүргэе
+<h3>Хайрт чамдаа төрсөн өдрийн мэнд хүргэе💛</h3>
         </pre>
       </div>
 
       <!-- Page 3 -->
-      <div class="swiper-slide slide3">
-        <h1>Forever Yours ❤️</h1>
-        <p>Wherever you go, my love follows. Always.</p>
+      <div class="swiper-slide slide3">      
+        <img src="IMG_2691.JPG" alt="Memory Van" class="memory-pic" />
       </div>
 
     </div>
   </div>
-
-  <!-- Music -->
-  <audio id="bg-music" src="https://www.youtube.com/watch?v=9yjugxgrifQ"></audio>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
